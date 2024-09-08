@@ -1,20 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-js-app
-  namespace: default
+  name: react-app
+  labels:
+    app: react-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-js-app
+      app: react-app
   template:
     metadata:
       labels:
-        app: my-js-app
+        app: react-app
     spec:
       containers:
-        - name: my-js-app
-          image: <your_ecr_image>
+        - name: react-app
+          image: 992382496772.dkr.ecr.ap-south-1.amazonaws.com/assignment/images # Replace with your ECR image URL
           ports:
             - containerPort: 3000
