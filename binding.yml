@@ -1,0 +1,9 @@
+apiVersion: elbv2.k8s.aws/v1beta1
+kind: TargetGroupBinding
+metadata:
+  name: react-app
+spec:
+  serviceRef:
+    name: react-app-service
+    port: 80
+  targetGroupARN: arn:aws:elasticloadbalancing:ap-south-1:992382496772:targetgroup/jam/9bda3ddc4b608d12
